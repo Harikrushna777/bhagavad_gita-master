@@ -12,23 +12,29 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size s = MediaQuery.of(context).size;
-    List Images = [
+    List gImages = [
       'https://i.ytimg.com/vi/CtYPUNu-1VE/maxresdefault_live.jpg',
       'https://i.pinimg.com/originals/65/b3/77/65b377cccd6ff27b6ca29de8e9de42cf.jpg',
       'https://i.pinimg.com/originals/a6/8c/62/a68c62b9a65ee6ddff3fe5e21d40aecc.jpg',
     ];
     return Scaffold(
       appBar: AppBar(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(25),
+          ),
+        ),
         title: Text(
           "Bhagavad Gita",
           style: GoogleFonts.poppins(
-            fontSize: 22,
+            fontSize: 26,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
         ),
-        actions: [
-          PopupMenuButton(),
+        toolbarHeight: 120,
+        actions: const [
+          // PopupMenuButton(),
         ],
         centerTitle: true,
         backgroundColor: Colors.blue,
@@ -41,13 +47,13 @@ class HomePage extends StatelessWidget {
             CarouselSlider(
               disableGesture: true,
               items: List.generate(
-                Images.length,
+                gImages.length,
                 (index) => Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     image: DecorationImage(
-                      image: NetworkImage(Images[index]),
+                      image: NetworkImage(gImages[index]),
                       fit: BoxFit.fitWidth,
                     ),
                   ),
@@ -61,11 +67,11 @@ class HomePage extends StatelessWidget {
                 height: 200,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SizedBox(
-              height: 520,
+              height: 460,
               width: double.infinity,
               child: Consumer<JsonController>(
                 builder: (context, provider, child) {
