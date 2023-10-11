@@ -21,4 +21,6 @@ class JsonModals {
       transliteration: data['transliteration'],
     );
   }
+
+  List FavouriteList = [];
 }

@@ -51,10 +51,15 @@ class HomePage extends StatelessWidget {
                 (index) => Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.blue,
+                      style: BorderStyle.solid,
+                      width: 10,
+                    ),
                     borderRadius: BorderRadius.circular(15),
                     image: DecorationImage(
                       image: NetworkImage(gImages[index]),
-                      fit: BoxFit.fitWidth,
+                      fit: BoxFit.fitHeight,
                     ),
                   ),
                 ),
@@ -87,11 +92,10 @@ class HomePage extends StatelessWidget {
                               );
                             },
                             child: Container(
-                              padding: const EdgeInsets.only(
-                                left: 20,
-                              ),
+                              padding: const EdgeInsets.all(10),
                               height: s.height * 0.08,
                               width: s.width,
+                              alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 gradient: const LinearGradient(
                                   colors: [
@@ -102,9 +106,9 @@ class HomePage extends StatelessWidget {
                                 ),
                                 borderRadius: BorderRadius.circular(15),
                               ),
-                              alignment: Alignment.centerLeft,
                               child: Text(
                                 "Chapter  :  ${index + 1}",
+                                textAlign: TextAlign.center,
                                 style: GoogleFonts.poppins(
                                   fontSize: 22,
                                   fontWeight: FontWeight.bold,
@@ -119,6 +123,15 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed(MyPageRoute.favoriteScreen);
+        },
+        child: const Icon(
+          Icons.favorite,
+          color: Colors.blue,
         ),
       ),
     );

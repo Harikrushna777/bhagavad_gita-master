@@ -1,8 +1,6 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:json_app/utils/my_page_route.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -39,10 +37,16 @@ class _SplashScreenState extends State<SplashScreen> {
             Container(
               height: 300,
               width: 300,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.blue,
+                  style: BorderStyle.solid,
+                  width: 15,
+                ),
+                borderRadius: BorderRadius.circular(10),
+                image: const DecorationImage(
                   image: AssetImage('assets/images/splash1.jpg'),
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
@@ -52,7 +56,8 @@ class _SplashScreenState extends State<SplashScreen> {
             Text(
               "Bhagavad Gita",
               style: GoogleFonts.robotoMono(
-                fontWeight: FontWeight.bold,
+                letterSpacing: -1,
+                fontWeight: FontWeight.w800,
                 fontSize: 28,
                 color: Colors.blue,
               ),
@@ -60,7 +65,8 @@ class _SplashScreenState extends State<SplashScreen> {
             Text(
               "Application",
               style: GoogleFonts.robotoMono(
-                fontWeight: FontWeight.bold,
+                letterSpacing: -1,
+                fontWeight: FontWeight.w800,
                 fontSize: 28,
                 color: Colors.blue,
               ),
@@ -69,7 +75,8 @@ class _SplashScreenState extends State<SplashScreen> {
             Text(
               "Please Wait...",
               style: GoogleFonts.robotoMono(
-                fontWeight: FontWeight.bold,
+                letterSpacing: -1,
+                fontWeight: FontWeight.w800,
                 fontSize: 22,
                 color: Colors.blue,
               ),

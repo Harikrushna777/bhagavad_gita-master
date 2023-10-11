@@ -47,7 +47,6 @@ class ChapterPage extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(20),
           child: Consumer<JsonController>(builder: (context, pro, child) {
-            JsonModals verse = pro.allData[ind];
             return pro.allData.isNotEmpty
                 ? ListView.builder(
                     itemCount: pro.allData.length,
